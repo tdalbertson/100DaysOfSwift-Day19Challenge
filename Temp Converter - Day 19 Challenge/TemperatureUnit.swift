@@ -10,6 +10,6 @@ import SwiftUI
 
 enum TemperatureUnit: String, CaseIterable {
     case fahrenheit = "Fahrenheit"
-    case celcius = "Celcius"
+    case celsius = "Celsius"
     case kelvin = "Kelvin"
 }
