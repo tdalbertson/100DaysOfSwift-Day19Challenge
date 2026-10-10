@@ -16,7 +16,7 @@ struct UnitPickerView: View {
     }
 
     var body: some View {
-        HStack(spacing: 150) {
+        HStack(spacing: 120) {
             Section("Convert From") {
                 Picker("Unit From", selection: $unitFrom) {
                     ForEach(TemperatureUnit.allCases, id: \.self) { unit in
@@ -26,7 +26,7 @@ struct UnitPickerView: View {
                 }
             }
         }
-        HStack(spacing: 150) {
+        HStack(spacing: 120) {
             Section("Convert To") {
                 Picker("Unit To", selection: $unitTo) {
                     ForEach(availableDestinationUnits, id: \.self) { unit in

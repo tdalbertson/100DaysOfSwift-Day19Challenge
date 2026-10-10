@@ -15,17 +15,12 @@ struct ContentView: View {
                     .bold()
                     .foregroundColor(.primary)
                 UnitPickerView(unitFrom: $unitConvertFrom, unitTo: $unitConvertTo)
-
-                Section {
-                    HStack(spacing: 150) {
-                        Text("Enter a temperature: ")
-                        TextField("e.g. 32.00", value: $userEnteredValue, format: .number.precision(.fractionLength(2)))
-                            .keyboardType(.decimalPad)
-                    }
-                }
+                UserInputView(userInput: $userEnteredValue)
+                
             }
         }
         .navigationTitle("Temperature Converter")
+        .padding()
     }
 }
 
