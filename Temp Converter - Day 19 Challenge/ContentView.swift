@@ -5,7 +5,9 @@ struct ContentView: View {
     @State private var unitConvertTo: TemperatureUnit = .celsius
     @State private var userEnteredValue: Double = 0.0
     
-    var conversionResult: Double = 0.0
+    var conversionResult: Double {
+        TemperatureConverter.calcConversion(startingUnit: unitConvertFrom, target: unitConvertTo, temp: userEnteredValue)
+    }
     
     var body: some View {
         NavigationStack {
@@ -16,7 +18,7 @@ struct ContentView: View {
                     .foregroundColor(.primary)
                 UnitPickerView(unitFrom: $unitConvertFrom, unitTo: $unitConvertTo)
                 UserInputView(userInput: $userEnteredValue)
-                
+                Text("Result: \(conversionResult, format: .number.precision(.fractionLength(2)))")
             }
         }
         .navigationTitle("Temperature Converter")
